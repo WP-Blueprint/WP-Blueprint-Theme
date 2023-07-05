@@ -1,0 +1,67 @@
+/* ==========================================================================
+	@_header.scss
+	This file is used for styling the header.
+============================================================================= */
+
+header {
+	&::after {
+		z-index: 1;
+		content: "";
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background: black;
+		position: absolute;
+		opacity: 0.2;
+		@include break-medium {
+			display: none;
+		}
+	}
+	.containers.layouts.header {
+		background-color: white;
+		width: 100vw;
+		position: fixed;
+		z-index: 99;
+		top: 0;
+
+		.alignwide {
+			height: $header-height;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 42px;
+			& > .widget {
+				.kebab {
+					@include break-medium {
+						display: none;
+					}
+				}
+				& .widget-header {
+					padding-left: 35px;
+					padding-right: 35px;
+					top: $header-height;
+					right: 0;
+					background-color: white;
+					height: 100%;
+					position: fixed;
+					display: flex;
+					gap: 50px;
+					flex-direction: column;
+					& .widget:last-child {
+						flex: 1;
+					}
+					@include break-medium {
+						display: flex;
+						position: static;
+						padding-left: unset;
+						padding-right: unset;
+						height: inherit;
+						flex-direction: row;
+					}
+				}
+			}
+		}
+	}
+}

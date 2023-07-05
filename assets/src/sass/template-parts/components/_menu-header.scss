@@ -1,0 +1,19 @@
+.menu-header-container {
+	display: block;
+
+	& .menu {
+		display: flex;
+		list-style: none;
+		flex-direction: column;
+
+		a {
+			color: unset;
+			text-decoration: unset;
+		}
+
+		@include break-medium {
+			gap: 42px;
+			flex-direction: row;
+		}
+	}
+}

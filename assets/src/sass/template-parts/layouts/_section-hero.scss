@@ -1,0 +1,7 @@
+section.hero {
+	min-height: calc(100vh - $header-height);
+	margin-block-start: 0;
+	background: url(../../../image/background-hero.svg);
+	background-position: bottom;
+	background-repeat: no-repeat;
+}

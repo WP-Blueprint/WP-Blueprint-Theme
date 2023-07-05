@@ -1,0 +1,86 @@
+/* ==========================================================================
+	@_base.scss
+	This file is used to contain all base imports.
+    Files inside this folder can contain global styles used in the project.
+============================================================================= */
+body {
+	position: relative;
+}
+.edit-link {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	height: 50px;
+	width: 50px;
+	a {
+		position: relative;
+		height: 100%;
+		width: 100%;
+		border-radius: 100%;
+		display: inline-block;
+		&::after {
+			background: linear-gradient(53deg, #572285 0%, #9214ff 100%);
+			border-radius: 100%;
+			position: absolute;
+			content: url("../../image/edit-page.svg");
+			height: 100%;
+			width: 100%;
+			display: block;
+			padding: 10px;
+			top: 0;
+			left: 0;
+		}
+	}
+}
+
+.is-box-style {
+	border: 1px solid #e7eaee;
+	padding: 32px;
+	border-radius: 16px;
+}
+.has-border-radius-small {
+	border-radius: 4px;
+	overflow: hidden;
+}
+.has-border-radius-medium {
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.wp-block-separator {
+	border: 1px solid;
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+}
+:where(.wp-block-columns.is-layout-flex) {
+	gap: 34px;
+}
+
+.has-arrow-icon {
+	& a {
+		display: inline-flex;
+		gap: 9px;
+		&::after {
+			content: url("../../image/icon.svg");
+		}
+	}
+}
+.has-text-gradient {
+	background: -webkit-linear-gradient(
+		45deg,
+		rgba(255, 255, 255, 1),
+		rgb(177, 119, 227),
+		rgb(204, 185, 221),
+		rgba(255, 255, 255, 1)
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+a {
+	color: #4f4f4f;
+	text-decoration: unset;
+}

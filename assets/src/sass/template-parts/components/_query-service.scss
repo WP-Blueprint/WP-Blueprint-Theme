@@ -1,0 +1,56 @@
+/* ==========================================================================
+	@_query-service.scss
+	Template part element for the Service Query
+============================================================================= */
+
+.query.service {
+	.service-categories {
+		display: flex;
+		justify-content: space-between;
+		margin-block-end: 21px;
+		& .service-category {
+			display: inline-flex;
+			align-items: center;
+			gap: 15px;
+			&::before {
+				font-family: dashicons;
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				width: 61px;
+				height: 61px;
+				border-radius: 61px;
+				background: var(--wp--preset--color--white-100);
+				box-shadow: 0px 7.602642059326172px 25.342140197753906px 0px
+					rgba(157, 159, 221, 0.65);
+				color: var(--wp--preset--color--primary);
+			}
+			&[data-slug="environments"] {
+				&::before {
+					content: "\f111";
+				}
+			}
+			&[data-slug="plugins"] {
+				&::before {
+					content: "\f106";
+				}
+			}
+			&[data-slug="themes"] {
+				&::before {
+					content: "\f100";
+				}
+			}
+			&.is-active {
+				&::before {
+					color: white;
+					background: var(--wp--preset--color--gradient-secondary);
+				}
+			}
+		}
+	}
+	& .services-content {
+		display: flex;
+		flex-direction: column;
+		gap: 23px;
+	}
+}

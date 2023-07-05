@@ -1,0 +1,22 @@
+/* ==========================================================================
+	@_content-documentation.scss
+	Template part for displaying documentation content in single.php
+============================================================================= */
+
+.documentation-template-default {
+	main {
+		display: flex;
+		flex-wrap: wrap;
+		.documentation-navigation {
+			.level-1 {
+				> .page-item {
+					> .page-link {
+					}
+				}
+			}
+		}
+		.post-navigation {
+			width: 100%;
+		}
+	}
+}
