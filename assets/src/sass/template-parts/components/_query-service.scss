@@ -4,6 +4,9 @@
 ============================================================================= */
 
 .query.service {
+	display: flex;
+	flex-direction: column;
+	gap: 23px;
 	.service-categories {
 		display: flex;
 		justify-content: space-between;

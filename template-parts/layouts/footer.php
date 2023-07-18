@@ -10,7 +10,10 @@
 
 ?>
 
-<div class="footer containers layouts alignwide content-wrapper">
-	<?php echo do_shortcode( '[copyright]' ); ?>
-	<?php echo do_shortcode( '[footprint]' ); ?>
+<div class="footer containers layouts content-wrapper">
+	<div class="alignwide">
+		<div class="widget">
+			<?php get_template_part( 'template-parts/widgets/widget', 'footer' ); ?>
+		</div>
+	</div>
 </div> <!-- .footer containers layouts  -->

@@ -36,6 +36,7 @@ final class Initializer {
 			Components\Functions::class,
 
 			Extensions\Ajax::class,
+			Extensions\ToggleWalker::class,
 		);
 	}
 

@@ -29,6 +29,15 @@ class WidgetAreas extends \WPBlueprint\Theme\Core\Handlers\WidgetArea {
 				'before_title'  => '<h3 class="widget-title">',
 				'after_title'   => '</h3>',
 			),
+			array(
+				'id'            => 'footer-widget',
+				'name'          => 'footer-widget',
+				'description'   => 'Widget area for the footer',
+				'before_widget' => '<div class="widget %2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			),
 		);
 
 		parent::set_widget_areas( $widget_areas );

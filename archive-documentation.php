@@ -12,6 +12,27 @@
 
 get_header();
 
-generate_documentation_child_navigation();
+?>
+<div class="content-grid alignwide"> 
+    <div class="content-container">
 
-get_footer();
+        <header class="entry-header">
+        <?php
+        the_archive_title( '<h1 class="page-title">', '</h1>' );
+        ?>
+        </header><!-- .page-header -->
+
+        <div class="entry-content">
+        <?php
+        if ( have_posts() ) : 
+            generate_documentation_child_navigation();
+        endif;
+
+
+        ?>
+        </div><!-- .entry-content -->
+        </div>
+    </div>
+</div>
+
+<?php get_footer();

@@ -2,3 +2,24 @@
 	@_content-post.scss
 	Template part for displaying post content in single.php
 ============================================================================= */
+
+.content-grid {
+	display: grid;
+	grid-template-areas: "content" "aside";
+	grid-template-columns: 1fr;
+	gap: 20px;
+
+	@include break-medium {
+		grid-template-areas: "content aside";
+		grid-template-columns: var(--wp--style--global--content-size) 1fr;
+	}
+
+	> aside {
+		grid-area: aside;
+		min-width: 300px;
+	}
+
+	.content-container {
+		grid-area: content;
+	}
+}

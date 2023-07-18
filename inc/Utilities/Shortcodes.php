@@ -33,6 +33,10 @@ class Shortcodes extends \WPBlueprint\Theme\Core\Handlers\Shortcode {
 				'tag'      => 'footprint',
 				'callback' => array( $this, 'footprint_callback' ),
 			),
+			array(
+				'tag'      => 'breadcrumb',
+				'callback' => array( $this, 'breadcrumb_callback' ),
+			),
 		);
 
 		parent::set_shortcodes( $shortcodes );
@@ -90,7 +94,7 @@ class Shortcodes extends \WPBlueprint\Theme\Core\Handlers\Shortcode {
 			)
 		);
 
-		$output = '<div class="service query">';
+		$output = '<div class="query service">';
 
 		// If there are any terms.
 		if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
@@ -118,5 +122,43 @@ class Shortcodes extends \WPBlueprint\Theme\Core\Handlers\Shortcode {
 	public function footprint_callback(): string {
 		$footprint = '<div id="wcb" class="carbonbadge"></div>';
 		return $footprint;
+	}
+
+	/**
+	 * Outputs the Breadcrumb 
+	 * 
+	 * @return string The HTML markup for the breadcrumbs.
+	 */
+	public function breadcrumb_callback() {
+		$post_type = 'documentation'; // Replace 'documentation' with the actual name of your custom post type
+		$delimiter = '<span class="breadcrumb-delimiter"> / </span>'; // Customize the delimiter as needed
+		$home_text = 'Documentation'; // Text for the home link
+		$before = '<span class="breadcrumb-item">'; // HTML markup before each breadcrumb item
+		$after = '</span>'; // HTML markup after each breadcrumb item
+	
+		$output = '';
+	
+		if (!is_front_page()) {
+			$output .= '<div class="breadcrumb">';
+			$output .= $before . '<a href="' . get_post_type_archive_link($post_type) . '">' . $home_text . '</a>' . $after;
+	
+			if (is_singular($post_type)) {
+				global $post;
+	
+				// Get the parent pages
+				$parents = array_reverse(get_post_ancestors($post->ID));
+	
+				foreach ($parents as $parent) {
+					$output .= $delimiter . $before . '<a href="' . get_permalink($parent) . '">' . get_the_title($parent) . '</a>' . $after;
+				}
+	
+				// Add the current page
+				$output .= $delimiter . $before . get_the_title($post->ID) . $after;
+			}
+	
+			$output .= '</div>';
+		}
+	
+		return $output;
 	}
 }

@@ -1014,7 +1014,8 @@
 
 // Initialize Font
 // ------------------------
-html * {
+html {
+	font-size: 18px; // same as medium font size
 	font-family: "Montserrat", sans-serif;
 	line-height: 1.618;
 	h1,

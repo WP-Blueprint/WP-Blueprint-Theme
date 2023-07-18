@@ -18,13 +18,13 @@ header {
 			display: none;
 		}
 	}
+
 	.containers.layouts.header {
 		background-color: white;
 		width: 100vw;
 		position: fixed;
 		z-index: 99;
 		top: 0;
-
 		.alignwide {
 			height: $header-height;
 			display: flex;

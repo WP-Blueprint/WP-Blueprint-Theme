@@ -27,4 +27,4 @@
 		<?php get_template_part( 'template-parts/layouts/header' ); ?>
 	</header>
 
-	<main id="main" class="site-main" role="main">
+	<main id="main" class="<?= is_front_page() ? 'site-main' : 'site-main containers layouts' ?>" role="main">

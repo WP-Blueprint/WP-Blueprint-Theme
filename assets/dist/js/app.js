@@ -38,12 +38,42 @@ var App = /*#__PURE__*/function () {
   function App() {
     (0,_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, App);
     this.init();
+    this.nav();
   }
   (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(App, [{
     key: "init",
     value: function init() {
       // eslint-disable-next-line no-console
       console.info("App Initialized");
+    }
+  }, {
+    key: "nav",
+    value: function nav() {
+      document.addEventListener("DOMContentLoaded", function () {
+        // Set display: none to the other child ul elements beyond the first level
+        var otherChildUl = document.querySelectorAll(".documentation-navigation li > ul.children:not(:first-child)");
+        otherChildUl.forEach(function (childUl) {
+          childUl.style.display = "none";
+        });
+
+        // Set display: block to the specific child ul elements
+        var specificChildUl = document.querySelectorAll(".documentation-navigation li.current_page_parent > ul.children, .documentation-navigation li.current_page_ancestor > ul.children, .documentation-navigation li.current_page_item > ul.children");
+        specificChildUl.forEach(function (childUl) {
+          childUl.style.display = "block";
+        });
+      });
+      document.querySelectorAll(".documentation-navigation .toggle-children").forEach(function (button) {
+        button.addEventListener("click", function (event) {
+          // Toggle visibility of the next ul element (the children)
+          var ul = this.nextElementSibling;
+          if (ul.style.display === "none") {
+            ul.style.display = "block";
+          } else {
+            ul.style.display = "none";
+          }
+          console.log(ul.classList);
+        });
+      });
     }
   }]);
   return App;

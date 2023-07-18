@@ -3,20 +3,18 @@
 	Template part for displaying documentation content in single.php
 ============================================================================= */
 
-.documentation-template-default {
-	main {
-		display: flex;
-		flex-wrap: wrap;
-		.documentation-navigation {
-			.level-1 {
-				> .page-item {
-					> .page-link {
-					}
-				}
-			}
+.documentation-navigation {
+	> ul > li {
+		list-style: none;
+		display: none;
+		&.current_page_ancestor {
+			display: block;
 		}
-		.post-navigation {
-			width: 100%;
-		}
+	}
+	& ul {
+		list-style: none;
+	}
+	& .current_page_item a {
+		color: var(--wp--preset--color--primary);
 	}
 }
