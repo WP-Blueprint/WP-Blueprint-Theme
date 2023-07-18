@@ -10,13 +10,13 @@
  * @license https://www.gnu.org/licenses/gpl-3.0 GPL-3.0
  */
 
- $args = array(
+$args = array(
 	'post_type' => 'service',
 );
 
 $the_query = new WP_Query( $args );
 ?>
-	
+
 <div class="query service">
 	<?php
 	while ( $the_query->have_posts() ) :
@@ -26,4 +26,3 @@ $the_query = new WP_Query( $args );
 	?>
 </div>
 
-	

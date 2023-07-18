@@ -328,66 +328,66 @@ if ( ! function_exists( 'generate_documentation_child_navigation' ) ) :
 	 * @param int $level The hierarchical level of the navigation. Default is 0.
 	 * @return void
 	 */
-	function generate_documentation_child_navigation($parent_id = 0, $level = 0) {
+	function generate_documentation_child_navigation( $parent_id = 0, $level = 0 ) {
 		$args = array(
 			'post_type'      => 'documentation',
 			'posts_per_page' => -1,
 			'post_parent'    => $parent_id,
 			'order'          => 'ASC',
-			'orderby'        => 'menu_order'
+			'orderby'        => 'menu_order',
 		);
-	
-		$child_pages = get_posts($args);
-	
-		if ($child_pages) {
-			echo '<div class="level-' . $level . '">';
-        
-			foreach ($child_pages as $child) {
+
+		$child_pages = get_posts( $args );
+
+		if ( $child_pages ) {
+			echo '<div class="level-' . esc_attr( $level ) . '">';
+
+			foreach ( $child_pages as $child ) {
 				echo '<div>';
-				echo '<a href="' . get_permalink($child->ID) . '">' . $child->post_title . '</a>';
-				generate_documentation_child_navigation($child->ID, $level + 1);
+				echo '<a href="' . esc_url( get_permalink( $child->ID ) ) . '">' . esc_html( $child->post_title ) . '</a>';
+				generate_documentation_child_navigation( $child->ID, $level + 1 );
 				echo '</div>';
 			}
-			
+
 			echo '</div>';
 		}
 	}
-	
-	
 
+	/**
+	 * Generates the package navigation menu.
+	 *
+	 * Retrieves the top-level parent page, constructs the arguments for listing child pages,
+	 * and outputs the navigation menu markup using a custom walker.
+	 */
 	function generate_package_navigation() {
 		global $post;
-		
-		// Get top level parent
-		$ancestors = get_post_ancestors($post->ID);
-		$root = end($ancestors);
 
-		// If we are on a parent page without ancestors
-		if (empty($ancestors)) {
+		// Get top level parent.
+		$ancestors = get_post_ancestors( $post->ID );
+		$root      = end( $ancestors );
+
+		// If we are on a parent page without ancestors.
+		if ( empty( $ancestors ) ) {
 			$root = $post->ID;
 		}
-	
+
 		$args = array(
-			'child_of' => $root,
+			'child_of'  => $root,
 			'post_type' => 'documentation',
-			'title_li' => null,
-			'echo' => 0,
-			'walker'     => new WPBlueprint\Theme\Classic\Extensions\ToggleWalker(), // Use your custom walker
+			'title_li'  => null,
+			'echo'      => 0,
+			'walker'    => new WPBlueprint\Theme\Classic\Extensions\ToggleWalker(), // Use your custom walker.
 		);
-	
-		$children = wp_list_pages($args);
-	
-		if ($children) {
+
+		$children = wp_list_pages( $args );
+
+		if ( $children ) {
 			echo '<nav class="documentation-navigation">';
 			echo '<ul class="package-navigation">';
-			echo $children;
+			echo wp_kses_post( $children );
 			echo '</ul>';
 			echo '</nav>';
 		}
 	}
-	
-	
 
-	
-	
 endif;

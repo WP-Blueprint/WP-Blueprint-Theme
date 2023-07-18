@@ -13,7 +13,7 @@
 get_header();
 ?>
 <div class="content-grid alignwide"> 
-    <div class="content-container is-layout-constrained">
+	<div class="content-container is-layout-constrained">
 
 			<header class="entry-header alignwide">
 				<?php
@@ -23,9 +23,9 @@ get_header();
 			</header><!-- .page-header -->
 
 			<div class="entry-content alignwide">
-				<div class="query <?php echo get_post_type(); ?>">
+				<div class="query <?php echo esc_attr( get_post_type() ); ?>">
 				<?php
-				if ( have_posts() ) : 
+				if ( have_posts() ) :
 
 					while ( have_posts() ) :
 						the_post();
@@ -41,16 +41,17 @@ get_header();
 
 					the_posts_navigation();
 
-				else:
+				else :
 					get_template_part( 'template-parts/components/result', 'none' );
-				
+
 				endif;
-				
+
 
 				?>
 			</div><!-- .entry-content -->
 		</div>
-    </div>
+	</div>
 </div>
 
-<?php get_footer();
+<?php
+get_footer();

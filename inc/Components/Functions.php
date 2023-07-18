@@ -47,7 +47,7 @@ class Functions {
 		add_filter( 'upload_mimes', array( $this, 'custom_mime_types' ) );
 
 		add_editor_style( 'assets/dist/css/style.css' );
-	
+
 	}
 
 	/**

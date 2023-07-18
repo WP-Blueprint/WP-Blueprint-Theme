@@ -12,12 +12,12 @@
 
 <div class="content-grid alignwide"> 
 	<aside>
-		<?php echo generate_package_navigation();?>
+		<?php echo esc_html( generate_package_navigation() ); ?>
 	</aside>
 	<div class="content-container">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<header class="entry-header">
-				<?php echo do_shortcode('[breadcrumb]');?>
+				<?php echo do_shortcode( '[breadcrumb]' ); ?>
 				<?php
 				the_title( '<h1 class="entry-title">', '</h1>' );
 
@@ -63,7 +63,7 @@
 
 			<footer class="entry-footer">
 				<?php wpbp_entry_footer(); ?>
-				<?php generate_documentation_child_navigation(get_the_id()); ?>
+				<?php generate_documentation_child_navigation( get_the_id() ); ?>
 		</footer><!-- .entry-footer -->
 		</article><!-- #post-<?php the_ID(); ?> -->
 	</div>
