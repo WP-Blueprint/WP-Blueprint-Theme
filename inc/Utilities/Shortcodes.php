@@ -20,7 +20,6 @@ class Shortcodes extends \WPBlueprint\Theme\Core\Handlers\Shortcode {
 	 */
 	public function __construct() {
 		$shortcodes = array(
-
 			array(
 				'tag'      => 'copyright',
 				'callback' => array( $this, 'copyright_callback' ),
