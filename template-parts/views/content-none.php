@@ -15,7 +15,7 @@
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'wpblueprint' ); ?></h1>
 	</header><!-- .page-header -->
 
-	<div class="page-content">
+	<div class="page-content is-layout-constrained">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 

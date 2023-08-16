@@ -17,7 +17,7 @@
 
 	<?php wpbp_post_thumbnail(); ?>
 
-	<div class="entry-content">
+	<div class="entry-content is-layout-constrained">
 		<?php
 		the_content();
 
