@@ -244,6 +244,7 @@ if ( ! function_exists( 'wpbp_entry_footer' ) ) :
 
 			if ($child_navigation){
 				$output .= $child_navigation; 
+				$output .= '<h2>Related Topics</h2>';
 				$output .= '<hr class="wp-block-separator has-text-color has-white-200-color has-alpha-channel-opacity has-white-200-background-color has-background">';
 
 			}
