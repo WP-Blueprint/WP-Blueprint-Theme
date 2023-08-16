@@ -25,7 +25,7 @@ get_header();
 		<div class="entry-content">
 		<?php
 		if ( have_posts() ) :
-			echo esc_html( generate_documentation_child_navigation() );
+			echo wp_kses_post( generate_documentation_child_navigation() );
 		endif;
 
 

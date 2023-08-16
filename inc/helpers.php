@@ -256,7 +256,7 @@ if ( ! function_exists( 'wpbp_entry_footer' ) ) :
 
 			$output .= '</div>';
 
-			echo $output;
+			echo wp_kses_post( $output ); // Note: If $child_navigation can contain scripts or other potentially unsafe content, you'd need to ensure that's also properly escaped.
 
 		}
 
