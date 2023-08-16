@@ -1,3 +1,4 @@
+@import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
 /*
 -------------------------------------------------------------------------------------
 This file serves as an aggregate of all the abstracts (settings, helpers, and functions) used across our stylesheets. 
@@ -2841,6 +2842,19 @@ html h6 {
   line-height: 1.1;
 }
 
+/* Specify in CSS */
+code {
+  font-family: "Fira Code", monospace;
+}
+code mark {
+  padding: 4px 10px;
+}
+
+@supports (font-variation-settings: normal) {
+  code {
+    font-family: "Fira Code VF", monospace;
+  }
+}
 /* ==========================================================================
 	@_base.scss
 	This file is used to contain all base imports.
