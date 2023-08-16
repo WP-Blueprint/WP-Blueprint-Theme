@@ -256,7 +256,7 @@ if ( ! function_exists( 'wpbp_entry_footer' ) ) :
 
 			$output .= '</div>';
 
-			echo esc_html( $output );
+			echo $output;
 
 		}
 
