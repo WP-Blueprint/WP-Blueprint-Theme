@@ -234,6 +234,30 @@ if ( ! function_exists( 'wpbp_entry_footer' ) ) :
 			}
 		}
 
+		// Hide category and tag text for pages.
+		if ( 'documentation' === get_post_type() ) {
+			$published = get_the_date( 'F j, Y' ); 
+			$updated = get_the_modified_date( 'F j, Y' ); 
+
+			$output = '<hr class="wp-block-separator has-text-color has-white-200-color has-alpha-channel-opacity has-white-200-background-color has-background">';
+			
+			$output .= generate_documentation_child_navigation( get_the_id() ); 
+
+			$output .= '<hr class="wp-block-separator has-text-color has-white-200-color has-alpha-channel-opacity has-white-200-background-color has-background">';
+			
+			$output .= '<div class="documentation-date">';
+
+			$output .= '<div class="published"><b>First Published</b><span>' . $published . '</span></div>';
+		
+			$output .= '<div class="updated"><b>Last Updated</b><span>' . $updated . '</span></div>';
+			
+		
+			$output .= '</div>';
+		
+			echo $output;
+			
+		}
+
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
 			comments_popup_link(
@@ -340,15 +364,20 @@ if ( ! function_exists( 'generate_documentation_child_navigation' ) ) :
 		$child_pages = get_posts( $args );
 
 		if ( $child_pages ) {
-			echo '<div class="level-' . esc_attr( $level ) . '">';
+			$output = '<div class="level-' . esc_attr( $level ) . '">';
 
 			foreach ( $child_pages as $child ) {
-				echo '<div>';
-				echo '<a href="' . esc_url( get_permalink( $child->ID ) ) . '">' . esc_html( $child->post_title ) . '</a>';
-				echo '</div>';
+				$output .= '<div>';
+				$output .= '<a href="' . esc_url( get_permalink( $child->ID ) ) . '">' . esc_html( $child->post_title ) . '</a>';
+				
+				// $output .= generate_documentation_child_navigation( $child->ID, $level + 1 );
+
+				$output .= '</div>';
 			}
 
-			echo '</div>';
+			$output .= '</div>';
+
+			return $output;
 		}
 	}
 

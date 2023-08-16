@@ -63,8 +63,7 @@
 
 			<footer class="entry-footer">
 				<?php wpbp_entry_footer(); ?>
-				<?php generate_documentation_child_navigation( get_the_id() ); ?>
-		</footer><!-- .entry-footer -->
+			</footer><!-- .entry-footer -->
 		</article><!-- #post-<?php the_ID(); ?> -->
 	</div>
 </div>
