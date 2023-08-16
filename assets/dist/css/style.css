@@ -2870,6 +2870,12 @@ body .is-layout-constrained > * + * {
           margin-block-start: 1.5rem;
 }
 
+ul,
+ol {
+  -webkit-padding-start: 40px;
+          padding-inline-start: 40px;
+}
+
 .edit-link {
   position: fixed;
   bottom: 10px;
