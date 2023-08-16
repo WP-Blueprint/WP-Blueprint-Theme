@@ -238,12 +238,15 @@ if ( ! function_exists( 'wpbp_entry_footer' ) ) :
 		if ( 'documentation' === get_post_type() ) {
 			$published = get_the_date( 'F j, Y' ); 
 			$updated = get_the_modified_date( 'F j, Y' ); 
-
-			$output = '<hr class="wp-block-separator has-text-color has-white-200-color has-alpha-channel-opacity has-white-200-background-color has-background">';
+			$child_navigation = generate_documentation_child_navigation( get_the_id() );
 			
-			$output .= generate_documentation_child_navigation( get_the_id() ); 
+			$output = '<hr class="wp-block-separator has-text-color has-white-200-color has-alpha-channel-opacity has-white-200-background-color has-background">';
 
-			$output .= '<hr class="wp-block-separator has-text-color has-white-200-color has-alpha-channel-opacity has-white-200-background-color has-background">';
+			if ($child_navigation){
+				$output .= $child_navigation; 
+				$output .= '<hr class="wp-block-separator has-text-color has-white-200-color has-alpha-channel-opacity has-white-200-background-color has-background">';
+
+			}
 			
 			$output .= '<div class="documentation-date">';
 
