@@ -345,7 +345,6 @@ if ( ! function_exists( 'generate_documentation_child_navigation' ) ) :
 			foreach ( $child_pages as $child ) {
 				echo '<div>';
 				echo '<a href="' . esc_url( get_permalink( $child->ID ) ) . '">' . esc_html( $child->post_title ) . '</a>';
-				generate_documentation_child_navigation( $child->ID, $level + 1 );
 				echo '</div>';
 			}
 
