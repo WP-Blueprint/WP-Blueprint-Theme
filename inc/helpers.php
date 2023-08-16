@@ -243,10 +243,9 @@ if ( ! function_exists( 'wpbp_entry_footer' ) ) :
 			$output = '<hr class="wp-block-separator has-text-color has-white-200-color has-alpha-channel-opacity has-white-200-background-color has-background">';
 
 			if ($child_navigation){
+				$output .= '<h2 class="wp-block-heading has-l-font-size">Related Topics</h2>';
 				$output .= $child_navigation; 
-				$output .= '<h2>Related Topics</h2>';
 				$output .= '<hr class="wp-block-separator has-text-color has-white-200-color has-alpha-channel-opacity has-white-200-background-color has-background">';
-
 			}
 			
 			$output .= '<div class="documentation-date">';
