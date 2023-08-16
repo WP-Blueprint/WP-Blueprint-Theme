@@ -3301,11 +3301,7 @@ Files inside this folder can contain specific element styles and layout.
   flex-direction: column;
 }
 
-article.type-documentation .entry-content h2,
-article.type-documentation .entry-content h3,
-article.type-documentation .entry-content h4,
-article.type-documentation .entry-content h5,
-article.type-documentation .entry-content h6 {
+article.type-documentation .entry-content h2 {
   -webkit-margin-before: 3em;
           margin-block-start: 3em;
 }

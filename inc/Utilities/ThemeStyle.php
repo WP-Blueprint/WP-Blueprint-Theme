@@ -118,3 +118,4 @@ class ThemeStyle extends \WPBlueprint\Theme\Core\Handlers\ThemeStyle {
 		parent::set_gradients( $gradients );
 	}
 }
+
