@@ -2865,6 +2865,11 @@ body {
   position: relative;
 }
 
+body .is-layout-constrained > * + * {
+  -webkit-margin-before: 1.5rem;
+          margin-block-start: 1.5rem;
+}
+
 .edit-link {
   position: fixed;
   bottom: 10px;
