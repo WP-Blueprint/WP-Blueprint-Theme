@@ -3286,6 +3286,15 @@ Files inside this folder can contain specific element styles and layout.
   flex-direction: column;
 }
 
+article.type-documentation h2,
+article.type-documentation h3,
+article.type-documentation h4,
+article.type-documentation h5,
+article.type-documentation h6 {
+  -webkit-margin-before: 100px;
+          margin-block-start: 100px;
+}
+
 /*
 
 This file is used to contain all layouts imports.
