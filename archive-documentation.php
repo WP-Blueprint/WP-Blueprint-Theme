@@ -25,7 +25,7 @@ get_header();
 		<div class="entry-content">
 		<?php
 		if ( have_posts() ) :
-			generate_documentation_child_navigation();
+			echo generate_documentation_child_navigation();
 		endif;
 
 
