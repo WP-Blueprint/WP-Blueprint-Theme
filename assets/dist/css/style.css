@@ -2845,6 +2845,7 @@ html h6 {
 /* Specify in CSS */
 code {
   font-family: "Fira Code", monospace;
+  font-size: 14px;
 }
 code mark {
   padding: 4px 10px;
