@@ -68,7 +68,7 @@ class ThemeStyle extends \WPBlueprint\Theme\Core\Handlers\ThemeStyle {
 				'value_mobile'     => '18px',
 				'allow_in_backend' => true,
 			),
-			'l'        => array(
+			'l'         => array(
 				'value'            => '23px',
 				'value_mobile'     => '23px',
 				'elements'         => 'h5, h6',

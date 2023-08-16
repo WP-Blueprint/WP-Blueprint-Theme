@@ -236,29 +236,28 @@ if ( ! function_exists( 'wpbp_entry_footer' ) ) :
 
 		// Hide category and tag text for pages.
 		if ( 'documentation' === get_post_type() ) {
-			$published = get_the_date( 'F j, Y' ); 
-			$updated = get_the_modified_date( 'F j, Y' ); 
+			$published        = get_the_date( 'F j, Y' );
+			$updated          = get_the_modified_date( 'F j, Y' );
 			$child_navigation = generate_documentation_child_navigation( get_the_id() );
-			
+
 			$output = '<hr class="wp-block-separator has-text-color has-white-200-color has-alpha-channel-opacity has-white-200-background-color has-background">';
 
-			if ($child_navigation){
+			if ( $child_navigation ) {
 				$output .= '<h2 class="wp-block-heading has-l-font-size">Related Topics</h2>';
-				$output .= $child_navigation; 
+				$output .= $child_navigation;
 				$output .= '<hr class="wp-block-separator has-text-color has-white-200-color has-alpha-channel-opacity has-white-200-background-color has-background">';
 			}
-			
+
 			$output .= '<div class="documentation-date">';
 
 			$output .= '<div class="published"><b>First Published</b><span>' . $published . '</span></div>';
-		
+
 			$output .= '<div class="updated"><b>Last Updated</b><span>' . $updated . '</span></div>';
-			
-		
+
 			$output .= '</div>';
-		
-			echo $output;
-			
+
+			echo esc_html( $output );
+
 		}
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
@@ -353,7 +352,7 @@ if ( ! function_exists( 'generate_documentation_child_navigation' ) ) :
 	 *
 	 * @param int $parent_id The parent page ID. Default is 0.
 	 * @param int $level The hierarchical level of the navigation. Default is 0.
-	 * @return void
+	 * @return string Child Navigation
 	 */
 	function generate_documentation_child_navigation( $parent_id = 0, $level = 0 ) {
 		$args = array(
@@ -372,9 +371,6 @@ if ( ! function_exists( 'generate_documentation_child_navigation' ) ) :
 			foreach ( $child_pages as $child ) {
 				$output .= '<div>';
 				$output .= '<a href="' . esc_url( get_permalink( $child->ID ) ) . '">' . esc_html( $child->post_title ) . '</a>';
-				
-				// $output .= generate_documentation_child_navigation( $child->ID, $level + 1 );
-
 				$output .= '</div>';
 			}
 
