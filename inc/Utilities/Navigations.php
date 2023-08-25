@@ -20,9 +20,7 @@ class Navigations extends \WPBlueprint\Theme\Core\Handlers\Navigation {
 	 */
 	public function __construct() {
 		$navigations = array(
-			array(
-				'header' => __( 'Header Menu', 'default' ),
-			),
+			'header' => __( 'Header Menu', 'default' ),
 		);
 
 		parent::set_navigations( $navigations );
