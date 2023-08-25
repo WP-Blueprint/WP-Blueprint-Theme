@@ -21,7 +21,7 @@ class Taxonomies extends \WPBlueprint\Theme\Core\Handlers\Taxonomy {
 	public function __construct() {
 		$taxonomies = array(
 			array(
-				'service_type',
+				'services',
 				'service',
 				array(
 					'labels'       => array(
@@ -39,7 +39,7 @@ class Taxonomies extends \WPBlueprint\Theme\Core\Handlers\Taxonomy {
 					),
 					'hierarchical' => true,
 					'rewrite'      => array(
-						'slug'       => 'service_type',
+						'slug'       => 'services',
 						'with_front' => true,
 					),
 					'show_ui'      => true,

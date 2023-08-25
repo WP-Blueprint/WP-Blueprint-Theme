@@ -41,7 +41,7 @@ class PostTypes extends \WPBlueprint\Theme\Core\Handlers\PostType {
 					'label'               => 'service',
 					'description'         => __( ' The "Services" custom post type allows you to present and describe the various services your business offers in a structured format.', 'default' ),
 					'supports'            => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' ),
-					'taxonomies'          => array( 'service_type' ),
+					'taxonomies'          => array( 'services' ),
 					'hierarchical'        => false,
 					'public'              => true,
 					'show_ui'             => true,
