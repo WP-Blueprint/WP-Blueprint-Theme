@@ -4,19 +4,19 @@
  *
  * @since   1.0
  * @package wp-blueprint/theme-classic
- * @link    https://github.com/WP-Blueprint/wp-blueprint-theme-core
+ * @link    https://wp-blueprint.dev/documentation/themes/core/handlers/post-types/
  * @license https://www.gnu.org/licenses/gpl-3.0 GPL-3.0
  */
 
 namespace WPBlueprint\Theme\Classic\Utilities;
 
 /**
- * This class extends the PosttypeHandler in order to register Posttypes.
+ * This class extends the Post Type Handler in order to register Post Types.
  */
 class PostTypes extends \WPBlueprint\Theme\Core\Handlers\PostType {
 
 	/**
-	 * Constructor: Registering posttypes
+	 * Constructor: Registering Post Types.
 	 */
 	public function __construct() {
 		$posttypes = array(

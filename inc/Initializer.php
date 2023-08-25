@@ -25,7 +25,7 @@ final class Initializer {
 			Utilities\Enqueue::class,
 			Utilities\Gutenberg::class,
 			Utilities\Navigations::class,
-			Utilities\ThemeStyle::class,
+			Utilities\ThemeStyles::class,
 			Utilities\PostTypes::class,
 			Utilities\Taxonomies::class,
 			Utilities\WidgetAreas::class,

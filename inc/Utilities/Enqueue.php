@@ -4,19 +4,19 @@
  *
  * @since   1.0
  * @package wp-blueprint/theme-classic
- * @link    https://github.com/WP-Blueprint/wp-blueprint-theme-core
+ * @link    https://wp-blueprint.dev/documentation/themes/core/handlers/enqueue/
  * @license https://www.gnu.org/licenses/gpl-3.0 GPL-3.0
  */
 
 namespace WPBlueprint\Theme\Classic\Utilities;
 
 /**
- * This class extends the EnqueueHandler in order to EnqueueHandler new Script and Styles.
+ * This class extends the Enqueue Handler in order to Enqueue new Script and Styles.
  */
 class Enqueue extends \WPBlueprint\Theme\Core\Handlers\Enqueue {
 
 	/**
-	 * Constructor: Enqueueing styles and scripts.
+	 * Constructor: Registering Enqueue.
 	 */
 	public function __construct() {
 

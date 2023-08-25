@@ -4,7 +4,7 @@
  *
  * @since   1.0
  * @package wp-blueprint/theme-classic
- * @link    https://github.com/WP-Blueprint/wp-blueprint-theme-core
+ * @link    https://wp-blueprint.dev/documentation/themes/core/handlers/shortcodes/
  * @license https://www.gnu.org/licenses/gpl-3.0 GPL-3.0
  */
 
@@ -16,7 +16,7 @@ namespace WPBlueprint\Theme\Classic\Utilities;
 class Shortcodes extends \WPBlueprint\Theme\Core\Handlers\Shortcode {
 
 	/**
-	 * Constructor: Registering shortcodes
+	 * Constructor: Registering Shortcodes.
 	 */
 	public function __construct() {
 		$shortcodes = array(
@@ -86,7 +86,7 @@ class Shortcodes extends \WPBlueprint\Theme\Core\Handlers\Shortcode {
 		// Fetch service categories.
 		$terms = get_terms(
 			array(
-				'taxonomy'   => 'service_type',
+				'taxonomy'   => 'services',
 				'hide_empty' => false,
 				'orderby'    => 'name',
 				'order'      => 'DESC',

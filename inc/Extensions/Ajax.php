@@ -1,6 +1,6 @@
 <?php
 /**
- * WP-Blueprint Theme Classic Extension: AJAX Handler Extension
+ * WP Blueprint Theme Classic Extension: AJAX Handler Extension
  *
  * @since   1.0
  * @package wp-blueprint/theme-classic
@@ -44,7 +44,7 @@ class AJAX {
 			'posts_per_page' => -1,
 			'tax_query'      => array(
 				array(
-					'taxonomy' => 'service_type',
+					'taxonomy' => 'services',
 					'field'    => 'slug',
 					'terms'    => $slug,
 				),
