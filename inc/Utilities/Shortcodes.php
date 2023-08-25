@@ -26,15 +26,15 @@ class Shortcodes extends \WPBlueprint\Theme\Core\Handlers\Shortcode {
 			),
 			array(
 				'services',
-				 array( $this, 'services_callback' ),
+				array( $this, 'services_callback' ),
 			),
 			array(
 				'footprint',
-				 array( $this, 'footprint_callback' ),
+				array( $this, 'footprint_callback' ),
 			),
 			array(
 				'breadcrumb',
-				 array( $this, 'breadcrumb_callback' ),
+				array( $this, 'breadcrumb_callback' ),
 			),
 		);
 

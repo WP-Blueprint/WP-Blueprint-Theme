@@ -1,13 +1,13 @@
-import { useSelect, useDispatch } from "@wordpress/data";
-import { TextControl } from "@wordpress/components";
+import { useSelect, useDispatch } from '@wordpress/data';
+import { TextControl } from '@wordpress/components';
 
 const ServiceGithubField = () => {
-	console.log("test");
 	const value = useSelect(
 		(select) =>
-			select("core/editor").getEditedPostAttribute("meta")?.service_github || ""
+			select('core/editor').getEditedPostAttribute('meta')
+				?.service_github || ''
 	);
-	const { editPost } = useDispatch("core/editor");
+	const { editPost } = useDispatch('core/editor');
 
 	const onChangeValue = (newValue) => {
 		const updatedMeta = {
@@ -16,7 +16,9 @@ const ServiceGithubField = () => {
 		editPost({ meta: updatedMeta });
 	};
 
-	return <TextControl label="GitHub" value={value} onChange={onChangeValue} />;
+	return (
+		<TextControl label="GitHub" value={value} onChange={onChangeValue} />
+	);
 };
 
 export default ServiceGithubField;

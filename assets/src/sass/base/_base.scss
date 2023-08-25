@@ -14,18 +14,26 @@ ul,
 ol {
 	padding-inline-start: 40px;
 }
+
+a {
+	color: #4f4f4f;
+	text-decoration: unset;
+}
+
 .edit-link {
 	position: fixed;
 	bottom: 10px;
 	right: 10px;
 	height: 50px;
 	width: 50px;
+
 	a {
 		position: relative;
 		height: 100%;
 		width: 100%;
 		border-radius: 100%;
 		display: inline-block;
+
 		&::after {
 			background: linear-gradient(53deg, #572285 0%, #9214ff 100%);
 			border-radius: 100%;
@@ -40,7 +48,6 @@ ol {
 		}
 	}
 }
-
 .is-box-style {
 	border: 1px solid #e7eaee;
 	padding: 32px;
@@ -86,9 +93,4 @@ ol {
 	);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-}
-
-a {
-	color: #4f4f4f;
-	text-decoration: unset;
 }

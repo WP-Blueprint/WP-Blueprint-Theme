@@ -1,7 +1,7 @@
 {
-	"name": "wp-blueprint-classic-theme",
+	"name": "wp-blueprint-theme-classic",
 	"version": "1.0.0",
-	"description": "",
+	"description": "WP Blueprint Theme Classic that provides an object-oriented PHP foundation for WordPress projects that use the traditional WordPress theme system.",
 	"main": "index.js",
 	"scripts": {
 		"dev": "mix",
@@ -11,21 +11,17 @@
 		"hot": "mix watch --hot",
 		"prod": "mix --production",
 		"production": "mix --production",
+		"lint": "eslint assets/src/scripts/*",
+		"lint:fix": "eslint --fix assets/src/scripts/*",
+		"lint:scss": "stylelint 'assets/src/sass/**/*.scss'",
+		"lint:scss:fix": "npm run lint-css -- --fix",
 		"lint:css": "stylelint **/*.css -i .gitignore",
-		"lint:css:fix": "stylelint **/*.css -i .gitignore --fix",
-		"lint:php": "vendor/bin/phpcs",
-		"lint:php:fix": "vendor/bin/phpcbf",
-		"lint": "eslint assets/src/js/*",
-		"lint:fix": "eslint --fix assets/src/js/*",
-		"lint-css": "stylelint 'assets/src/sass/**/*.scss'",
-		"lint-css:fix": "npm run lint-css -- --fix"
+		"lint:css:fix": "stylelint **/*.css -i .gitignore --fix"
 	},
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
 		"@tinypixelco/laravel-mix-wp-blocks": "^1.2.0",
-		"@wordpress/data": "^9.7.0",
-		"@wordpress/components": "^25.3.0",
 		"@wordpress/babel-preset-default": "^7.19.0",
 		"@wordpress/prettier-config": "^2.18.0",
 		"@wordpress/stylelint-config": "^21.18.0",

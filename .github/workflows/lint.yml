@@ -1,4 +1,4 @@
-name: Code Quality - WPCS
+name: CI
 
 on:
   pull_request:
@@ -7,27 +7,23 @@ on:
     branches: "*"
 
 jobs:
-  lint:
-    name: PHP Lint
+  lint-php:
+    name: PHP and WPCS Lint
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout repository
       - name: Checkout
         uses: actions/checkout@v2
 
-      # Setup PHP
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: 7.4
 
-      # Get composer cache directory
       - name: Get Composer Cache Directory
         id: composer-cache
         run: echo "::set-output name=dir::$(composer config cache-files-dir)"
 
-      # Cache composer dependencies
       - name: Cache Composer Dependencies
         uses: actions/cache@v2.1.6
         with:
@@ -36,11 +32,42 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-composer-
 
-      # Install composer packages
       - name: Install Composer Packages
-        run: |
-          composer install --no-progress
+        run: composer install --no-progress
 
-      # Run the WPCS linting command
+      - name: Run PHP Lint
+        run: composer run-script lint:php
+
       - name: Run WPCS Lint
         run: composer run-script lint:wpcs
+
+  lint-css-scss:
+    name: CSS and SCSS Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Node Modules
+        run: npm ci
+
+      - name: Lint CSS
+        run: npm run lint:css
+
+      - name: Lint SCSS
+        run: npm run lint:scss
+
+  lint-js:
+    name: JavaScript Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Node Modules
+        run: npm ci
+
+      - name: Lint JS
+        run: npm run lint

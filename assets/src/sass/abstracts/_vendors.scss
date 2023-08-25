@@ -44,7 +44,7 @@ These imports are meant to streamline your development process by providing a se
 
 /* stylelint-disable function-url-quotes, declaration-colon-newline-after */
 @font-face {
-	font-family: dashicons;
+	font-family: "dashicons";
 	src: url("../../fonts/dashicons.eot?817fa93900491282be74a4c4fc9f7c47");
 	src: url("../../fonts/dashicons.eot?817fa93900491282be74a4c4fc9f7c47#iefix")
 			format("embedded-opentype"),
@@ -59,7 +59,7 @@ These imports are meant to streamline your development process by providing a se
 
 .dashicons,
 .dashicons-before:before {
-	font-family: dashicons;
+	font-family: "dashicons", sans-serif;
 	display: inline-block;
 	line-height: 1;
 	font-weight: 400;
