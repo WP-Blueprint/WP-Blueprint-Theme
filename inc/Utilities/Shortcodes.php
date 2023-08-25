@@ -21,20 +21,20 @@ class Shortcodes extends \WPBlueprint\Theme\Core\Handlers\Shortcode {
 	public function __construct() {
 		$shortcodes = array(
 			array(
-				'tag'      => 'copyright',
-				'callback' => array( $this, 'copyright_callback' ),
+				'copyright',
+				array( $this, 'copyright_callback' ),
 			),
 			array(
-				'tag'      => 'services',
-				'callback' => array( $this, 'services_callback' ),
+				'services',
+				 array( $this, 'services_callback' ),
 			),
 			array(
-				'tag'      => 'footprint',
-				'callback' => array( $this, 'footprint_callback' ),
+				'footprint',
+				 array( $this, 'footprint_callback' ),
 			),
 			array(
-				'tag'      => 'breadcrumb',
-				'callback' => array( $this, 'breadcrumb_callback' ),
+				'breadcrumb',
+				 array( $this, 'breadcrumb_callback' ),
 			),
 		);
 
