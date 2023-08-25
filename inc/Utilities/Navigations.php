@@ -21,8 +21,7 @@ class Navigations extends \WPBlueprint\Theme\Core\Handlers\Navigation {
 	public function __construct() {
 		$navigations = array(
 			array(
-				'location' => 'header',
-				'label'    => __( 'Header Menu', 'default' ),
+				'header' => __( 'Header Menu', 'default' ),
 			),
 		);
 

@@ -21,9 +21,9 @@ class Taxonomies extends \WPBlueprint\Theme\Core\Handlers\Taxonomy {
 	public function __construct() {
 		$taxonomies = array(
 			array(
-				'name'        => 'service_type',
-				'object_type' => 'service',
-				'args'        => array(
+				'service_type',
+				'service',
+				array(
 					'labels'       => array(
 						'name'              => 'Service Types',
 						'singular_name'     => 'Service Type',

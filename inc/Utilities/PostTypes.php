@@ -21,8 +21,8 @@ class PostTypes extends \WPBlueprint\Theme\Core\Handlers\PostType {
 	public function __construct() {
 		$posttypes = array(
 			array(
-				'name' => 'service',
-				'args' => array(
+				'service',
+				array(
 					'labels'              => array(
 						'name'               => __( 'Service', 'default' ),
 						'singular_name'      => __( 'Service', 'default' ),
@@ -59,8 +59,8 @@ class PostTypes extends \WPBlueprint\Theme\Core\Handlers\PostType {
 				),
 			),
 			array(
-				'name' => 'documentation',
-				'args' => array(
+				'documentation',
+				array(
 					'labels'              => array(
 						'name'               => __( 'Documentation', 'default' ),
 						'singular_name'      => __( 'Documentation', 'default' ),
