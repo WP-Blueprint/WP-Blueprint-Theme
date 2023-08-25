@@ -4,7 +4,7 @@
  * List all your static functions you wish to use globally on your theme
  *
  * @since   1.0
- * @package wp-blueprint/shared-classes
+ * @package wp-blueprint/theme-classic
  * @link    https://github.com/WP-Blueprint/wp-blueprint-core
  * @license https://www.gnu.org/licenses/gpl-3.0 GPL-3.0
  */
