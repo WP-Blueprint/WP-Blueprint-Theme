@@ -1,4 +1,9 @@
 {
+    "/js/app.js": "/js/app.js",
+    "/js/blocks/template-block.js": "/js/blocks/template-block.js",
+    "/js/fields/service-github.js": "/js/fields/service-github.js",
+    "/js/ajax/services.js": "/js/ajax/services.js",
+    "/css/style.css": "/css/style.css",
     "/favicon/android-chrome-192x192.png": "/favicon/android-chrome-192x192.png",
     "/favicon/android-chrome-512x512.png": "/favicon/android-chrome-512x512.png",
     "/favicon/apple-touch-icon.png": "/favicon/apple-touch-icon.png",
