@@ -13,7 +13,7 @@ namespace WPBlueprint\Theme\Classic\Utilities;
 /**
  * This class extends the Theme Style Handler in order to register Theme Styles.
  */
-class ThemeStyle extends \WPBlueprint\Theme\Core\Handlers\ThemeStyles {
+class ThemeStyles extends \WPBlueprint\Theme\Core\Handlers\ThemeStyle {
 
 	/**
 	 * Constructor: Registering Theme Styles.
