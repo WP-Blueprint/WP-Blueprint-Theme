@@ -25,7 +25,7 @@ final class Initializer {
 			Utilities\Enqueue::class,
 			Utilities\Gutenberg::class,
 			Utilities\Navigations::class,
-			Utilities\ThemeStyles::class,
+			Utilities\ThemeStyle::class,
 			Utilities\PostTypes::class,
 			Utilities\Taxonomies::class,
 			Utilities\WidgetAreas::class,
@@ -33,7 +33,7 @@ final class Initializer {
 			Utilities\Shortcodes::class,
 			Utilities\PostMetas::class,
 
-			Components\Functions::class,
+			Customizations\Functions::class,
 
 			Extensions\Ajax::class,
 			Extensions\ToggleWalker::class,

@@ -1,6 +1,6 @@
 <?php
 /**
- * WP Blueprint: Theme Functions
+ * WP Blueprint Customization: Theme Functions
  *
  * @since   1.0
  * @package wp-blueprint/theme-classic
